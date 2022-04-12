@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "f662db7a71fd30750f6e9a3d87acdc84b79d4e9aace6d0e8e10f05d8454ce209"
+            "sha256": "5c4c460e29c9fc441f8f66309227305e0b23f018d7a6f5c89bce4a375ae7f32f"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -360,6 +360,14 @@
             ],
             "markers": "python_version >= '3.6'",
             "version": "==2.3.2"
+        },
+        "telebot": {
+            "hashes": [
+                "sha256:1d692ee3c2f07c5caacb1a82f0b59e40cef84f58be84435be9c8ce667dee94a6",
+                "sha256:717f08f0cbb2b3bbba73e8b36cca466345b751d44e938235eaa24139073f3265"
+            ],
+            "index": "pypi",
+            "version": "==0.0.4"
         },
         "urllib3": {
             "hashes": [

@@ -29,17 +29,18 @@ def main():
         if message.text == "👋 Поздороваться":
             bot.send_message(user_id, 'Привет, для того чтобы использовать бота, используйте соответствующие кнопки'
                                     '\n Данный бот показывает как заявленные МРЦ, так и применяемые МРЦ')
-        elif message.text == "Запросить применяемые мрц":
+        elif message.text == "Применяемые мрц":
             resp = f"https://nalog.gov.by/{content.MRC_primen()[0]}"
             database.set_primMRC(resp)
             markup = types.InlineKeyboardMarkup(row_width=2)
             btn = types.InlineKeyboardButton("Последнее применяемое мрц", url=resp)
             markup.add(btn)
             bot.send_message(user_id, "Для скачивания последнего применяемого мрц, нажмите кнопку", reply_markup=markup)
-        elif message.text == "Запросить заявленные мрц":
+        elif message.text == "Заявленные мрц":
             resp = f"https://nalog.gov.by/{content.MRC_zayav()[0]}"
             database.set_zayavMRC(resp)
             markup = types.InlineKeyboardMarkup(row_width=2)
             btn = types.InlineKeyboardButton("Последнее заявленное мрц", url=resp)
             markup.add(btn)
             bot.send_message(user_id, "Для скачивания последнего заявленного мрц, нажмите кнопку", reply_markup=markup)
+
