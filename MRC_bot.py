@@ -43,4 +43,3 @@ def main():
             btn = types.InlineKeyboardButton("Последнее заявленное мрц", url=resp)
             markup.add(btn)
             bot.send_message(user_id, "Для скачивания последнего заявленного мрц, нажмите кнопку", reply_markup=markup)
-

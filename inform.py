@@ -1,5 +1,5 @@
-host = "ec2-44-194-4-127.compute-1.amazonaws.com"
-database = "d9b5aommnf8c4t"
-user = "cfpgbhdazlfltp"
+host = "ec2-34-197-84-74.compute-1.amazonaws.com"
+database = "d4c7u1rl522sci"
+user = "wgmxtrzlsgrrnw"
 port = 5432
-password = "f5dc672c750fc0515b7a01c1d27eda13e3dfec675dd3881c36380cf3c044611d"
+password = "528ab31ddb9d4d8272d63522509870a8efa4ede30063ddce11ebdb0567953081"
