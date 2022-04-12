@@ -4,6 +4,7 @@ verify_ssl = true
 name = "pypi"
 
 [packages]
+pytelegrambotapi = "*"
 requests = "*"
 bs4 = "*"
 lxml = "*"
@@ -12,9 +13,6 @@ psycopg2 = "*"
 markdown = "*"
 flask = "*"
 gunicorn = "*"
-pandas = "*"
-decouple = "*"
-telebot = "*"
 
 [dev-packages]
 
