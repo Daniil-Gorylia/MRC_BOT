@@ -10,11 +10,11 @@ def main():
     def start_func(message):
         markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
         btn1 = types.KeyboardButton("👋 Поздороваться")
-        btn2 = types.KeyboardButton("Запросить применяемые мрц")
-        btn3 = types.KeyboardButton("Запросить заявленные мрц")
+        btn2 = types.KeyboardButton("Применяемые мрц")
+        btn3 = types.KeyboardButton("Заявленные мрц")
         markup.add(btn1, btn2, btn3)
         user_id = message.from_user.id
-        bot.send_message(user_id, 'Привет, это бот который отправляет информация об максимальных розничных ценах в '
+        bot.send_message(user_id, 'Этот бот отправляет информацию об максимальных розничных ценах в '
                                 ' республике Беларусь'.format(message.from_user), reply_markup=markup)
 
 
