@@ -12,7 +12,9 @@ def main():
         btn1 = types.KeyboardButton("👋 Поздороваться")
         btn2 = types.KeyboardButton("Применяемые мрц")
         btn3 = types.KeyboardButton("Заявленные мрц")
-        markup.add(btn1, btn2, btn3)
+        btn4 = types.KeyboardButton("Подписаться на обновления")
+        btn5 = types.KeyboardButton("Отписаться от обновлений")
+        markup.add(btn1, btn2, btn3, btn4, btn5)
         user_id = message.from_user.id
         bot.send_message(user_id, 'Этот бот отправляет информацию об максимальных розничных ценах в '
                                 ' республике Беларусь'.format(message.from_user), reply_markup=markup)
@@ -43,3 +45,9 @@ def main():
             btn = types.InlineKeyboardButton("Последнее заявленное мрц", url=resp)
             markup.add(btn)
             bot.send_message(user_id, "Для скачивания последнего заявленного мрц, нажмите кнопку", reply_markup=markup)
+        elif message.text == "Подписаться на обновления":
+            database.sub(user_id)
+            bot.send_message(user_id, "Вы подписались на обновления")
+        elif message.text == "Отписаться от обновлений":
+            database.unsub(user_id)
+            bot.send_message(user_id, 'Вы отписались от обновлений')

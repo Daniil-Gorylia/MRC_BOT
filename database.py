@@ -39,3 +39,11 @@ def set_zayavMRC(download_link):
         cur.execute(f"INSERT INTO zayav_MRC (download_link) VALUES ('{download_link}')")
         conn.commit()
 
+def sub(user_id):
+    cur.execute(f"UPDATE users SET subscription = TRUE WHERE user_id = '{user_id}';")
+    conn.commit()
+
+def unsub(user_id):
+    cur.execute(f"UPDATE users SET subscription = FALSE WHERE user_id = '{user_id}';")
+    conn.commit()
+
