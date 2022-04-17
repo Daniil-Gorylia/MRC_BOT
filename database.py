@@ -3,11 +3,11 @@ import inform
 import content
 from decouple import config
 
-host = config('HOST')
-dbname = config('DATABASE')
-user = config('USER')
-port = config('PORT')
-password = config('PASSWORD')
+host = config('HOST',default='')
+dbname = config('DATABASE',default='')
+user = config('USER',default='')
+port = config('PORT',default='')
+password = config('PASSWORD',default='')
 
 conn = psycopg2.connect(host=host, dbname=dbname,
                         user=user, password=password)
