@@ -41,7 +41,6 @@ def set_zayavMRC(download_link):
         conn.commit()
 
 
-
 def sub(user_id):
     cur.execute(f"UPDATE users SET subscription = TRUE WHERE user_id = '{user_id}';")
     conn.commit()
@@ -51,23 +50,3 @@ def unsub(user_id):
     cur.execute(f"UPDATE users SET subscription = FALSE WHERE user_id = '{user_id}';")
     conn.commit()
 
-
-resp = f"https://nalog.gov.by/{content.MRC_primen()[0]}"
-resp2 = f"https://nalog.gov.by/{content.MRC_zayav()[0]}"
-while True:
-    cur.execute(f"SELECT download_link FROM prim_MRC WHERE download_link = '{resp}';")
-    data = cur.fetchone()
-    if data is None:
-        cur.execute(f"INSERT INTO prim_MRC (download_link) VALUES ('{resp}')")
-        conn.commit()
-        cur.execute(f"SELECT user_id FROM users WHERE subscription = TRUE")
-        idmail = cur.fetchone()
-        MRC_bot.bot.send_message(idmail, 'Вышло новое обновление применяемого МРЦ')
-
-    cur.execute(f"SELECT download_link FROM zayav_MRC WHERE download_link = '{resp2}'")
-    data = cur.fetchone()
-    if data is None:
-        cur.execute(f"INSERT INTO zayav_MRC (download_link) VALUES ('{resp2}')")
-        conn.commit()
-        idmail = cur.fetchone()
-        MRC_bot.bot.send_message(idmail, 'Вышло новое обновление заявленного МРЦ')
