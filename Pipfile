@@ -13,6 +13,7 @@ psycopg2 = "*"
 markdown = "*"
 flask = "*"
 gunicorn = "*"
+python-decouple = "*"
 
 [dev-packages]
 
