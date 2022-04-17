@@ -62,11 +62,3 @@ while True:
         cur.execute(f"SELECT user_id FROM users WHERE subscription = TRUE")
         idmail = cur.fetchone()
         MRC_bot.bot.send_message(idmail, 'Вышло новое обновление применяемого МРЦ')
-    else:
-        cur.execute(f"SELECT download_link FROM zayav_MRC WHERE download_link = '{resp2}'")
-        data = cur.fetchone()
-        if data is None:
-            cur.execute(f"INSERT INTO zayav_MRC (download_link) VALUES ('{resp2}')")
-            conn.commit()
-            idmail2 = cur.fetchone()
-            MRC_bot.bot.send_message(idmail2, 'Вышло новое обновление применяемого МРЦ')
