@@ -1,16 +1,10 @@
 import psycopg2
 import inform
 import content
-from decouple import config
 
-host = config('HOST',default='')
-dbname = config('DATABASE',default='')
-user = config('USER',default='')
-port = config('PORT',default='')
-password = config('PASSWORD',default='')
 
-conn = psycopg2.connect(host=host, dbname=dbname,
-                        user=user, password=password)
+conn = psycopg2.connect(host=inform.host, dbname=inform.database,
+                        user=inform.user, password=inform.password)
 
 #id
 #user_id
