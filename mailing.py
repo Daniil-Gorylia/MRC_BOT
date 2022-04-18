@@ -7,7 +7,3 @@ def mailing_all():
     database.set_primMRC(resp)
     resp2 = f"https://nalog.gov.by/{content.MRC_zayav()[0]}"
     database.set_zayavMRC(resp2)
-
-
-if __name__ == "__main__":
-    a = mailing_all()
