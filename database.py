@@ -31,7 +31,6 @@ def set_primMRC(download_link):
     if data is None:
         cur.execute(f"INSERT INTO prim_MRC (download_link) VALUES ('{download_link}')")
         conn.commit()
-        MRC_bot.bot.send_message(sub_check(), "Вышло новое обновление применяемых мрц, проверьте ссылку")
 
 
 def set_zayavMRC(download_link):
@@ -40,7 +39,6 @@ def set_zayavMRC(download_link):
     if data is None:
         cur.execute(f"INSERT INTO zayav_MRC (download_link) VALUES ('{download_link}')")
         conn.commit()
-        MRC_bot.bot.send_message(sub_check(), "Вышло новое обновление заявленных мрц, проверьте ссылку")
 
 
 
