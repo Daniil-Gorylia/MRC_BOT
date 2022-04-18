@@ -31,7 +31,7 @@ def set_primMRC(download_link):
     if data is None:
         cur.execute(f"INSERT INTO prim_MRC (download_link) VALUES ('{download_link}')")
         conn.commit()
-
+        MRC_bot.bot.send_message(sub_check(), "Вышло новое обновление применяемых мрц, проверьте ссылку")
 
 
 def set_zayavMRC(download_link):
@@ -40,6 +40,7 @@ def set_zayavMRC(download_link):
     if data is None:
         cur.execute(f"INSERT INTO zayav_MRC (download_link) VALUES ('{download_link}')")
         conn.commit()
+        MRC_bot.bot.send_message(sub_check(), "Вышло новое обновление заявленных мрц, проверьте ссылку")
 
 
 
@@ -51,3 +52,8 @@ def sub(user_id):
 def unsub(user_id):
     cur.execute(f"UPDATE users SET subscription = FALSE WHERE user_id = '{user_id}';")
     conn.commit()
+
+def sub_check():
+    cur.execute(f"SELECT user_id FROM users WHERE subscription = TRUE;")
+    iduser = cur.fetchall()
+    return iduser
