@@ -1,7 +1,6 @@
 import content
 import database
 
-
 def mailing():
     resp = f"https://nalog.gov.by/{content.MRC_primen()[0]}"
     database.set_primMRC(resp)

@@ -31,9 +31,7 @@ def set_primMRC(download_link):
     if data is None:
         cur.execute(f"INSERT INTO prim_MRC (download_link) VALUES ('{download_link}')")
         conn.commit()
-        cur.execute(f"SELECT user_id FROM users WHERE subscription = TRUE")
-        idmail = cur.fetchone()
-        MRC_bot.bot.send_message(idmail, 'Вышло новое обновление применяемого МРЦ')
+
 
 
 def set_zayavMRC(download_link):
@@ -42,9 +40,7 @@ def set_zayavMRC(download_link):
     if data is None:
         cur.execute(f"INSERT INTO zayav_MRC (download_link) VALUES ('{download_link}')")
         conn.commit()
-        cur.execute(f"SELECT user_id FROM users WHERE subscription = TRUE")
-        idmail = cur.fetchone()
-        MRC_bot.bot.send_message(idmail, 'Вышло новое обновление заявленного МРЦ')
+
 
 
 def sub(user_id):
